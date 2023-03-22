@@ -88,6 +88,9 @@ public class Main {
                return toRoman(toArabic(firstOperand) + toArabic(secondOperand));
             }
             if(operation.equals("-")){
+                if(toArabic(firstOperand) - toArabic(secondOperand) <= 0){
+                    throw new Exception("format does not match");
+                }
                 return toRoman(toArabic(firstOperand) - toArabic(secondOperand));
             }
             if(operation.equals("\\*")){
